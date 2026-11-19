@@ -37,7 +37,6 @@ import { FieldsetModule } from 'primeng/fieldset'
 import { InputGroupModule } from 'primeng/inputgroup'
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon'
 import { InputTextModule } from 'primeng/inputtext'
-import { InputSwitchModule } from 'primeng/inputswitch'
 import { MessageModule } from 'primeng/message'
 import { SelectModule } from 'primeng/select'
 import { SelectButtonModule } from 'primeng/selectbutton'
@@ -45,6 +44,7 @@ import { SelectItem } from 'primeng/api'
 import { TableModule } from 'primeng/table'
 import { TabsModule } from 'primeng/tabs'
 import { TextareaModule } from 'primeng/textarea'
+import { ToggleSwitchModule } from 'primeng/toggleswitch'
 import { TooltipModule } from 'primeng/tooltip'
 
 import { AngularAcceleratorModule } from '@onecx/angular-accelerator'
@@ -101,7 +101,6 @@ type Preview = { status: AnnouncementStatus; type: AnnouncementType; priority: A
     InputGroupModule,
     InputGroupAddonModule,
     InputTextModule,
-    InputSwitchModule,
     MessageModule,
     ReactiveFormsModule,
     SelectModule,
@@ -110,6 +109,7 @@ type Preview = { status: AnnouncementStatus; type: AnnouncementType; priority: A
     TabsModule,
     TextareaModule,
     TooltipModule,
+    ToggleSwitchModule,
     TranslateModule
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,

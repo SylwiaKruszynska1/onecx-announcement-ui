@@ -224,7 +224,7 @@
                 <div
                   class="sm:mr-4 flex flex-row sm:flex-column sm:justify-content-center align-items-center row-gap-1 column-gap-2"
                 >
-                  <p-inputSwitch
+                  <p-toggleswitch
                     inputId="am_detail_form_status"
                     class="input-switch-xl"
                     formControlName="status"
@@ -235,7 +235,7 @@
                     [pTooltip]="'ANNOUNCEMENT.TOOLTIPS.STATUS' | translate"
                     tooltipPosition="top"
                     tooltipEvent="hover"
-                  ></p-inputSwitch>
+                  ></p-toggleswitch>
                   <label class="text-sm float-label" for="am_detail_form_status" aria-hidden="true">
                     {{ 'ENUMS.ANNOUNCEMENT_STATUS.' + announcementForm.controls['status'].value | translate }}
                   </label>
@@ -268,7 +268,6 @@
                     panelStyleClass="w-20rem"
                     formControlName="workspaceName"
                     [options]="allWorkspaces"
-                    [autoDisplayFirst]="true"
                     [appendTo]="'body'"
                     [showClear]="true"
                     [emptyMessage]="'ACTIONS.SEARCH.NO_DATA' | translate"
@@ -291,7 +290,6 @@
                     panelStyleClass="w-20rem"
                     formControlName="productName"
                     [options]="allProducts"
-                    [autoDisplayFirst]="true"
                     [appendTo]="'body'"
                     [showClear]="true"
                     [emptyMessage]="'ACTIONS.SEARCH.NO_DATA' | translate"
