@@ -33,7 +33,6 @@ import { DatePicker } from 'primeng/datepicker'
 import { DialogModule } from 'primeng/dialog'
 import { DynamicDialogModule } from 'primeng/dynamicdialog'
 import { FloatLabelModule } from 'primeng/floatlabel'
-import { FieldsetModule } from 'primeng/fieldset'
 import { InputGroupModule } from 'primeng/inputgroup'
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon'
 import { InputTextModule } from 'primeng/inputtext'
@@ -96,7 +95,6 @@ type Preview = { status: AnnouncementStatus; type: AnnouncementType; priority: A
     DialogModule,
     DynamicDialogModule,
     FloatLabelModule,
-    FieldsetModule,
     FormsModule,
     InputGroupModule,
     InputGroupAddonModule,
