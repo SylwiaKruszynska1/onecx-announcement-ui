@@ -2,7 +2,6 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
 import { provideHttpClient } from '@angular/common/http'
 import { provideHttpClientTesting } from '@angular/common/http/testing'
 import { FormControl, FormGroup } from '@angular/forms'
-import { provideNoopAnimations } from '@angular/platform-browser/animations'
 import { BehaviorSubject, firstValueFrom, of, throwError } from 'rxjs'
 
 import { PortalMessageService, UserService } from '@onecx/angular-integration-interface'
@@ -71,7 +70,6 @@ describe('AnnouncementDetailComponent', () => {
         provideHttpClient(),
         provideHttpClientTesting(),
         providePermissionService(),
-        provideNoopAnimations(),
         provideTranslateTestingService({
           de: require('/src/assets/i18n/de.json'),
           en: require('/src/assets/i18n/en.json')

@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
 import { provideHttpClient } from '@angular/common/http'
 import { provideHttpClientTesting } from '@angular/common/http/testing'
-import { provideNoopAnimations } from '@angular/platform-browser/animations'
 import { ActivatedRoute, provideRouter, Router } from '@angular/router'
 import { BehaviorSubject, of, throwError } from 'rxjs'
 
@@ -85,7 +84,6 @@ describe('AnnouncementSearchComponent', () => {
         provideHttpClient(),
         provideHttpClientTesting(),
         providePermissionService(),
-        provideNoopAnimations(),
         provideTranslateTestingService({
           de: require('/src/assets/i18n/de.json'),
           en: require('/src/assets/i18n/en.json')
