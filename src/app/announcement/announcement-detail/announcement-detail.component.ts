@@ -143,19 +143,19 @@ export class AnnouncementDetailComponent implements OnChanges {
   }
   public preview: Preview = this.previewDefault
 
-  constructor(
-    private readonly user: UserService,
-    private readonly announcementApi: AnnouncementInternalAPIService,
-    private readonly fb: FormBuilder,
-    private readonly translate: TranslateService,
-    private readonly msgService: PortalMessageService
-  ) {
+  private readonly user = inject(UserService)
+  private readonly announcementApi = inject(AnnouncementInternalAPIService)
+  private readonly fb = inject(FormBuilder)
+  private readonly translate = inject(TranslateService)
+  private readonly msgService = inject(PortalMessageService)
+
+  constructor() {
     this.user.lang$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe((lang) => {
       this.datetimeFormat = lang === 'de' ? 'dd.MM.yyyy HH:mm:ss' : this.datetimeFormat
       this.dateFormat = lang === 'de' ? 'dd.mm.yy' : this.dateFormat
       this.timeFormat = lang === 'de' ? '24' : this.timeFormat
     })
-    this.announcementForm = fb.nonNullable.group({
+    this.announcementForm = this.fb.nonNullable.group({
       modificationCount: new FormControl(null),
       title: new FormControl(null, [Validators.required, Validators.minLength(2), Validators.maxLength(255)]),
       content: new FormControl(null, [Validators.maxLength(1000)]),
