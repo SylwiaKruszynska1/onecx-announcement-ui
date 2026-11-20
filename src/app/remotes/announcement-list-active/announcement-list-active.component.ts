@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, Input } from '@angular/core'
-import { AsyncPipe, Location, NgFor } from '@angular/common'
+import { AsyncPipe, Location } from '@angular/common'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { BehaviorSubject, Observable, ReplaySubject, catchError, map, mergeMap, of } from 'rxjs'
 
@@ -27,7 +27,6 @@ import { environment } from 'src/environments/environment'
     AngularRemoteComponentsModule,
     AsyncPipe,
     MessageModule,
-    NgFor,
     PopoverModule,
     TranslateModule
   ],
