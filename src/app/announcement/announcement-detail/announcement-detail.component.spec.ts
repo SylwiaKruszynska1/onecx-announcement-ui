@@ -6,6 +6,7 @@ import { provideNoopAnimations } from '@angular/platform-browser/animations'
 import { BehaviorSubject, firstValueFrom, of, throwError } from 'rxjs'
 
 import { PortalMessageService, UserService } from '@onecx/angular-integration-interface'
+import { provideTranslateTestingService } from '@onecx/angular-testing'
 import { providePermissionService } from '@onecx/angular-utils'
 
 import {
@@ -16,7 +17,6 @@ import {
   AnnouncementType
 } from 'src/app/shared/generated'
 import { AnnouncementDetailComponent, dateRangeValidator } from './announcement-detail.component'
-import { TranslateTestingModule } from 'ngx-translate-testing'
 
 const announcement: Announcement = {
   modificationCount: 0,
@@ -66,14 +66,17 @@ describe('AnnouncementDetailComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
-        AnnouncementDetailComponent,
-        TranslateTestingModule.withTranslations({
-          de: require('src/assets/i18n/de.json'),
-          en: require('src/assets/i18n/en.json')
-        }).withDefaultLanguage(defaultLang)
-      ],
-      providers: [provideHttpClient(), provideHttpClientTesting(), providePermissionService(), provideNoopAnimations()]
+      imports: [AnnouncementDetailComponent],
+      providers: [
+        provideHttpClient(),
+        provideHttpClientTesting(),
+        providePermissionService(),
+        provideNoopAnimations(),
+        provideTranslateTestingService({
+          de: require('/src/assets/i18n/de.json'),
+          en: require('/src/assets/i18n/en.json')
+        })
+      ]
     })
       .overrideComponent(AnnouncementDetailComponent, {
         add: {
